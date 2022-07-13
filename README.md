@@ -7,6 +7,6 @@ Follow us on
 
 [ℹ️ Website](https://straydogz.wtf)
 
-# HashLips NFT minting dapp 🔥
+# StrayDogz NFT 🔥
 
 ![](https://github.com/straydogzwtf/website/blob/main/banner.png)
