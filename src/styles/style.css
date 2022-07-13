@@ -1,0 +1,110 @@
+body{
+    font-size: 16px;
+    font-family: 'Courier Prime', monospace;
+}
+.bg{
+    padding: 1rem;
+}
+.mint{
+    width: 30vw;
+    background-color: rgba(255,255,255,.8);
+    border-bottom-right-radius:1rem;
+    border-bottom-left-radius:1rem;
+    display: block;
+    margin: auto;
+}
+.logo{
+    width: 30vw;
+}
+.countdownCustom{
+    padding: 2rem;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 100%;
+    margin-bottom: -1rem;
+}
+.countdownTitle{
+    display: block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+.countdownContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.countdownContainer div{
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: block;
+    min-width: 100px;
+    margin-top: 1.5rem;
+}
+.countdownContainer div:first-child{
+    background-color: #97405d;
+}
+.countdownContainer div:nth-child(2){
+    background-color: #4d78a9;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.countdownContainer div:nth-child(3){
+    background-color: #c19343;
+}
+.countdownContainer div:before, .countdownContainer div:after{
+    content: "";
+    position: absolute;
+    display: block;
+    background-image: url(./images/sew.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 90px;
+    height: 90px;
+    margin-left: -1.7rem;
+    margin-top: -1.7rem;
+}
+.countdownContainer div:after{
+    transform: rotate(180deg);
+    margin-left: .3rem;
+    margin-top: -3.8rem;
+}
+.countdownContainer div span{
+    font-size: 1rem;
+    display: block;
+}
+.imgStripe{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    overflow: hidden;
+}
+.imgStripe img{
+    max-width: 300px;
+    height: auto;
+    display: -webkit-box;
+}
+@media(min-width:768px){
+    .bg{
+        padding: 2rem;
+    }
+    body{
+        font-size: 18px;
+        font-family: 'Courier Prime', monospace;
+    }
+    
+}
+@media(min-width:1200px){
+    
+}
