@@ -248,15 +248,16 @@ function App() {
               {CONFIG.NFT_NAME}.wtf
               @straydogzwtf
               Awwooooo! Decide the fate of abandoned DOGEs 🐕 No Roadmap, Discord TBA, FREE MINT - Adoption of 6969 NFTs
+              <div className="countdownTitle">Free Mint Date TBA</div>
             </s.TextDescription>
-            <Countdown
+            {/* <Countdown
               date={'2022-07-15T01:02:03'}
               renderer={props =>
               <div className="countdownCustom">
                 <div className="countdownTitle">Free Mint event starts in</div>
                 <div className="countdownContainer"><div>{props.days}<span>days</span></div><div>{props.hours}<span>hours</span></div><div>{props.minutes}<span>minutes</span></div></div>
               </div>}
-            />
+            /> */}
           </s.Container>
         </ResponsiveWrapper>
         <StyledLink target={"_blank"} href="#">
