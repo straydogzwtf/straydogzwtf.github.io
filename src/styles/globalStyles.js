@@ -49,7 +49,7 @@ export const Container = styled.div`
   background-size: cover;
   background-position: bottom right;
   @media(min-width:768px){
-    background-position: bottom center;
+    background-position: top center;
   }
 `;
 

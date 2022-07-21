@@ -5,7 +5,41 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import Countdown from 'react-countdown';
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Dropdown from 'react-bootstrap/Dropdown';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
+const handleDragStart = (e) => e.preventDefault();
+
+const responsive = {
+  0: { items: 3 },
+  568: { items: 5 },
+  1024: { items: 8 },
+};
+
+const items = [
+  <img src="/config/images/StrayDogz_01.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_02.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_03.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_04.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_05.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_06.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_07.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_08.png" onDragStart={handleDragStart} role="presentation" />,
+];
+const Gallery = () => {
+  return (
+    <AliceCarousel mouseTracking items={items} responsive={responsive}
+    controlsStrategy="alternate"/>
+  );
+}
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -65,8 +99,11 @@ export const ResponsiveWrapper = styled.div`
   @media (min-width: 768px) {
     width:50vw
   }
-  @media (min-width: 1200px) {
-    width:30vw
+  @media (min-width: 1024px) {
+    width:40vw
+  }
+  @media (min-width: 1650px) {
+    width:23vw
   }
 `;
 
@@ -74,11 +111,14 @@ export const StyledLogo = styled.img`
   width: 90vw;
   display:block;
   margin:auto;
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     width: 50vw;
   }
-  @media (min-width: 1200px) {
-    width: 30vw;
+  @media (min-width: 1024px) {
+    width: 40vw;
+  }
+  @media (min-width: 1650px) {
+    width: 23vw;
   }
   transition: width 0.5s;
   transition: height 0.5s;
@@ -113,7 +153,7 @@ export const StyledLink = styled.a`
   background-repeat:no-repeat;
   display:block;
   margin:auto;
-  width:70vh;
+  width:70vw;
   margin-top:4rem;
   border-radius:1rem;
   max-width:100%;
@@ -225,7 +265,8 @@ function App() {
   }, [blockchain.account]);
 
   return (
-    <s.Screen>
+    <s.Screen
+    >
       <s.Container
         flex={1}
         ai={"center"}
@@ -233,47 +274,78 @@ function App() {
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/sweb.jpg" : null}
         className="bg"
       >
-        <StyledLogo alt={"logo"} src={"/config/images/StrayDogz_Logo.png"} />
-        <ResponsiveWrapper
-        className="mint">
-          <s.Container>
-            <s.TextTitle
-              style={{ color: "black", padding:'2rem', paddingBottom:'0', textTransform:"uppercase", fontWeight:700, }}
-            >
-              All the abandoned doges :(
-            </s.TextTitle>
-            <s.TextDescription
-              style={{ color: "black", paddingLeft:'2rem', paddingRight:'2rem', paddingBottom:'2rem' }}
-            >
-              {CONFIG.NFT_NAME}.wtf
-              @straydogzwtf
-              Awwooooo! Decide the fate of abandoned DOGEs 🐕 No Roadmap, Discord TBA, FREE MINT - Adoption of 6969 NFTs
-              <div className="countdownTitle">Free Mint Date TBA</div>
-            </s.TextDescription>
-            {/* <Countdown
-              date={'2022-07-15T01:02:03'}
-              renderer={props =>
-              <div className="countdownCustom">
-                <div className="countdownTitle">Free Mint event starts in</div>
-                <div className="countdownContainer"><div>{props.days}<span>days</span></div><div>{props.hours}<span>hours</span></div><div>{props.minutes}<span>minutes</span></div></div>
-              </div>}
-            /> */}
-          </s.Container>
-        </ResponsiveWrapper>
-        <StyledLink target={"_blank"} href="#">
-          WHITELIST FORM
-        </StyledLink>
-      </s.Container>
-      <div className="imgStripe">
-        <img src="/config/images/StrayDogz_01.png"/>
-        <img src="/config/images/StrayDogz_02.png"/>
-        <img src="/config/images/StrayDogz_03.png"/>
-        <img src="/config/images/StrayDogz_04.png"/>
-        <img src="/config/images/StrayDogz_05.png"/>
-        <img src="/config/images/StrayDogz_06.png"/>
-        <img src="/config/images/StrayDogz_07.png"/>
-        <img src="/config/images/StrayDogz_08.png"/>
-      </div>
+        <Container>
+          <Row className="justify-content-center">
+            <Col className="col-md-8 col-lg-6 m-auto mb-3">
+              <Navbar className="sdNavbar" >
+                {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="w-100 justify-content-around px-1">
+                    <NavDropdown title="Community" id="basic-nav-dropdown">
+                      <NavDropdown.Item href="https://discord.gg/straydogzwtf">Discord</NavDropdown.Item>
+                      {/*<NavDropdown.Divider />*/}
+                      <NavDropdown.Item href="https://twitter.com/straydogzwtf">Twitter</NavDropdown.Item>
+                    </NavDropdown>
+                    {/*<Nav.Link href="#home">Home</Nav.Link>*/}
+                    <Nav.Link href="" target={"_blank"} className="comingSoon">Docs</Nav.Link>
+                    <Nav.Link href="" target={"_blank"} className="comingSoon">Stray Scan</Nav.Link>
+                    <Nav.Link href="" target={"_blank"} className="comingSoon">Scavenge Run</Nav.Link>
+                  </Nav>
+                </Navbar.Collapse>
+              </Navbar>
+            </Col>
+            <Col className="col-12 mb-3">
+              <Row className="justify-content-center">
+                <Col className="col-md-8 col-lg-5">
+                  <Row>
+                    <Col className="col-6 d-flex justify-content-end">
+                      <div className="twitterLink d-block"><a target={"_blank"} className="d-block w-100 h-100" href="#"></a></div>
+                    </Col>
+                    <Col className="col-6 d-flex justify-content-start">
+                      <div className="discordLink"><a target={"_blank"} className="d-block w-100 h-100" href="#"></a></div>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Col>
+            <Col className="col-12 mb-4">
+              <Row className="justify-content-center">
+                <Col className="col-md-8 col-lg-5 m-auto">
+                  <img className="w-100" alt={"logo"} src={"/config/images/StrayDogz_Logo.png"} />
+                </Col>
+              </Row>
+            </Col>
+            <Col className="col-12 mb-3">
+              <Row className="justify-content-center">
+                <Col className="col-md-8 col-lg-5 m-auto">
+                  <div className="mint">
+                    <Countdown
+                      date={'2022-07-23T18:00:00'}
+                      renderer={props =>
+                      <div className="countdownCustom">
+                        <div className="countdownTitle">Free Mint event starts in:</div>
+                        <div className="countdownContainer">
+                          <div>{props.days}<span>days</span></div><div>{props.hours}<span>hours</span></div><div>{props.minutes}<span>min</span></div>
+                        </div>
+                      </div>}
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+            <Col className="col-12 mb-3">
+              <Row className="justify-content-center">
+                <Col className="col-md-8">
+                  <img className="d-block m-auto mb-2" src={"/config/images/eth.png"}/>
+                  <p className="descriptionLanding">7777 Genesis StrayDogz NFTs are looking for new home!</p>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+        </s.Container>
+        <Gallery/>
     </s.Screen>
   );
 }
