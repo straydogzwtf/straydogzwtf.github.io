@@ -273,7 +273,7 @@ function App() {
           <Container>
           <Row className="justify-content-center">
             <Col className="col-md-8 col-lg-6 m-auto mb-3">
-              <Navbar className="sdNavbar" >
+              <Navbar className="sdNavbar" expand="sm">
                 {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -285,8 +285,8 @@ function App() {
                     </NavDropdown>
                     {/*<Nav.Link href="#home">Home</Nav.Link>*/}
                     <Nav.Link href="" target={"_blank"} className="comingSoon">Docs</Nav.Link>
-                    <Nav.Link href="" target={"_blank"} className="comingSoon">Scan</Nav.Link>
-                    <Nav.Link href="" target={"_blank"} className="comingSoon">Run</Nav.Link>
+                    <Nav.Link href="" target={"_blank"} className="comingSoon">Stray Scan</Nav.Link>
+                    <Nav.Link href="" target={"_blank"} className="comingSoon">Scavenge Run</Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
               </Navbar>
@@ -336,7 +336,7 @@ function App() {
           </Container>
           <div className="bottomPart">
             <img className="d-block m-auto mb-2" src={"/config/images/eth.png"}/>
-            <p className="descriptionLanding mb-3">7777 Genesis StrayDogz NFTs are looking for new home!</p>
+            <p className="descriptionLanding mb-3">7777 Genesis StrayDogz NFTs are looking for new homes!</p>
             <Gallery/>
           </div>
         </Container>
