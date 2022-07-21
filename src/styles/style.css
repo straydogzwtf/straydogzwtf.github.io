@@ -170,10 +170,11 @@ body{
 }
 .logoHomeAnimated:after{
     background-image: url(./images/landing-page-anim-prev_0000_Layer-2.png);
-    background-size: 26%;
-    background-position: bottom -130% left 35%;
+    background-size: 25%;
+    background-position: bottom left 35%;
     margin-top: 15%;
-    padding-top: 37%;
+    padding-top: 39%;
+    -webkit-transform-origin: center left;
     transform-origin: center left;
     animation: boneScroll 3s 2s linear infinite;
     z-index: 1;
@@ -317,7 +318,12 @@ body{
         font-size: 18px;
         font-family: 'Arvo', monospace;
     }
-    
+    .logoHomeAnimated:after{
+        background-size: 25%;
+        background-position: bottom left 35%;
+        margin-top: 15%;
+        padding-top: 37%;
+    }
 }
 @media(min-width:1200px){
     
