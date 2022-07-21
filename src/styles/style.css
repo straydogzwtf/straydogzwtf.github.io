@@ -5,25 +5,76 @@ body{
 }
 .bg{
     padding-top: 1rem;
+    background-image: url(./images/head1.png), url(./images/head2.png), url(./images/head3.png),url(./images/sweb.png);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 0;
+    transform-origin: center;
+    animation: bgAnimated 4s linear infinite;
+}
+@keyframes bgAnimated {
+    0%{
+        background-size:cover, 0, 0, cover;
+    }
+    10%{
+        background-size:cover, 0, 0, cover;
+    }
+    15%{
+        background-size:0, cover, 0, cover;
+    }
+    20%{
+        background-size:0, 0, cover, cover;
+    }
+    25%{
+        background-size:0, cover, 0, cover;
+    }
+    30%{
+        background-size:cover, 0, 0, cover;
+    }
+    100%{
+        background-size:cover, 0, 0, cover;
+    }
 }
 .sdNavbar{
     background-color: rgba(16,11,6,.75);
     border-radius: 1rem;
-    font-size: .85rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 .sdNavbar .nav-item, .sdNavbar .nav-link{
     border-right: 2px solid #f1eacc;
+    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .sdNavbar .nav-link:last-child{
     border-right: 0;
 }
 .sdNavbar .nav-item .nav-link{
     border-right: 0;
+    transition:transform .5s ease-in-out, color .3s
+}
+.sdNavbar .nav-item .nav-link::after{
+    transition: transform .3s;
 }
 .sdNavbar .nav-link{
     color: #f1eacc;
     line-height: 1rem;
+    transition:transform .5s ease-in-out, color .3s
+}
+.sdNavbar .nav-item .nav-link:hover, .sdNavbar .nav-link:hover{
+    color: white;
+    transform: scale(1.03);
+}
+.sdNavbar .nav-item .nav-link:hover:after{
+    transform:translateY(5px);
 }
 .sdNavbar .nav-item.show .nav-link{
     color: #f1eacc;
@@ -36,6 +87,7 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 1rem;
+    transition: filter .3s;
 }
 .twitterLink{
     background-image: url(./images/twitter_icon.png);
@@ -43,6 +95,9 @@ body{
 }
 .discordLink{
     background-image: url(./images/discord_icon.png);
+}
+.twitterLink:hover, .discordLink:hover{
+    filter: brightness(120%);
 }
 .descriptionLanding{
     color: white;
@@ -53,13 +108,11 @@ body{
 .sdNavbar a.nav-link.comingSoon{
     color: #887e75;
     line-height: 1rem;
-    display: block;
     width: 100%;
     text-align: center;
 }
 .nav-item.dropdown{
     line-height: 1rem;
-    display: block;
     width: 100%;
     text-align: center;
 }
@@ -79,11 +132,120 @@ body{
 .comingSoon:before{
     content:"coming soon";
     display: block;
-    font-size: .5rem;
-    margin-top: -.5rem;
-    line-height: .5rem;
+    font-size: .6rem;
+    margin-top: -1rem;
+    line-height: 1rem;
     color: #c97979;
     text-align: center;
+}
+.logoHomeAnimated{
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+}
+.logoHomeAnimated div{
+    position: relative;
+    background-image: url(./images/landing-page-anim-prev_0001_Layer-1.png);
+    padding-top: 45%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+.logoHomeAnimated:before,.logoHomeAnimated:after{
+    content:"";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+}
+.logoHomeAnimated:after{
+    background-image: url(./images/landing-page-anim-prev_0000_Layer-2.png);
+    background-size: 30%;
+    background-position: bottom -130% left 32%;
+    margin-top: 16%;
+    padding-top: 42%;
+    transform-origin: center left;
+    animation: boneScroll 3s 2s linear infinite;
+    z-index: 1;
+}
+@keyframes boneScroll{
+    0%{
+        transform: rotateZ(0deg) translateY(0px) translateX(0px) scale(1);
+    }
+    10%{
+        transform: rotateZ(0deg) translateY(0px) translateX(-20px) scale(1.1);
+    }
+    20%{
+        transform: rotateZ(0deg) translateY(0px) translateX(0px) scale(1);
+    }
+    30%{
+        transform: rotateZ(5deg) translateY(-15px) translateX(0px) scale(1);
+    }
+    32%{
+        transform: rotateZ(0deg) translateY(0px) translateX(0px) scale(1);
+    }
+    35%{
+        transform: rotateZ(-5deg) translateY(15px) translateX(0px) scale(1);
+    }
+    37%{
+        transform: rotateZ(0deg) translateY(0px) translateX(0px) scale(1);
+    }
+    40%{
+        transform: rotateZ(0deg) translateY(0px) translateX(0px) scale(1);
+    }
+    42%{
+        transform: rotateZ(0deg) translateY(0px) translateX(0px) scale(1);
+    }
+    45%{
+        transform: rotateZ(-5deg) translateY(15px) translateX(0px) scale(1);
+    }
+    47%{
+        transform: rotateZ(0deg) translateY(0px) translateX(0px) scale(1);
+    }
+    50%{
+        transform: rotateZ(0deg) translateY(0px) translateX(0px) scale(1);
+    }
+    100%{
+        transform: rotateZ(0deg) translateY(0px) translateX(0px) scale(1);
+    }
+}
+.logoHomeAnimated:before{
+    background-image: url(./images/landing-page-anim-prev_0002_logo.png);
+    background-size: contain;
+    padding-top: 53%;
+    z-index: 0;
+    animation: scrollBack 2s linear infinite;
+    
+}
+@keyframes scrollBack{
+    0%{
+        transform: rotateZ(0deg) ;
+        transform-origin: center;
+    }
+    20%{
+        transform: rotateZ(3deg);
+        transform-origin: center;
+    }
+    40%{
+        transform: rotateZ(0deg);
+        transform-origin: center;
+    }
+    60%{
+        transform: rotateZ(-3deg);
+        transform-origin: center;
+    }
+    80%{
+        transform: rotateZ(0deg);
+        transform-origin: center;
+    }
+    100%{
+        transform: rotateZ(0deg);
+        transform-origin: center;
+    }
 }
 .mint{
     width: 100%;
@@ -160,6 +322,9 @@ body{
     font-size: 1rem;
     display: block;
 }
+.alice-carousel{
+    margin-bottom: 0;
+}
 .alice-carousel__stage-item *{
     width: 100%;
 }
@@ -167,9 +332,6 @@ body{
     display: none;
 }
 @media(min-width:768px){
-    .bg{
-        padding-top: 2rem;
-    }
     body{
         font-size: 18px;
         font-family: 'Arvo', monospace;

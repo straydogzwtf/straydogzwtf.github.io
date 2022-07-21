@@ -33,6 +33,7 @@ const items = [
   <img src="/config/images/StrayDogz_06.png" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_07.png" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_08.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_09.png" onDragStart={handleDragStart} role="presentation" />,
 ];
 const Gallery = () => {
   return (
@@ -267,14 +268,9 @@ function App() {
   return (
     <s.Screen
     >
-      <s.Container
-        flex={1}
-        ai={"center"}
-        style={{ backgroundColor: "var(--primary)", display:"block" }}
-        image={CONFIG.SHOW_BACKGROUND ? "/config/images/sweb.jpg" : null}
-        className="bg"
-      >
-        <Container>
+
+        <Container fluid className="bg">
+          <Container>
           <Row className="justify-content-center">
             <Col className="col-md-8 col-lg-6 m-auto mb-3">
               <Navbar className="sdNavbar" >
@@ -283,14 +279,14 @@ function App() {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="w-100 justify-content-around px-1">
                     <NavDropdown title="Community" id="basic-nav-dropdown">
-                      <NavDropdown.Item href="https://discord.gg/straydogzwtf">Discord</NavDropdown.Item>
+                      <NavDropdown.Item href="https://discord.gg/straydogzwtf" target="_blank">Discord</NavDropdown.Item>
                       {/*<NavDropdown.Divider />*/}
-                      <NavDropdown.Item href="https://twitter.com/straydogzwtf">Twitter</NavDropdown.Item>
+                      <NavDropdown.Item href="https://twitter.com/straydogzwtf" target="_blank">Twitter</NavDropdown.Item>
                     </NavDropdown>
                     {/*<Nav.Link href="#home">Home</Nav.Link>*/}
                     <Nav.Link href="" target={"_blank"} className="comingSoon">Docs</Nav.Link>
-                    <Nav.Link href="" target={"_blank"} className="comingSoon">Stray Scan</Nav.Link>
-                    <Nav.Link href="" target={"_blank"} className="comingSoon">Scavenge Run</Nav.Link>
+                    <Nav.Link href="" target={"_blank"} className="comingSoon">Scan</Nav.Link>
+                    <Nav.Link href="" target={"_blank"} className="comingSoon">Run</Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
               </Navbar>
@@ -300,10 +296,10 @@ function App() {
                 <Col className="col-md-8 col-lg-5">
                   <Row>
                     <Col className="col-6 d-flex justify-content-end">
-                      <div className="twitterLink d-block"><a target={"_blank"} className="d-block w-100 h-100" href="#"></a></div>
+                      <div className="twitterLink d-block"><a href="https://twitter.com/straydogzwtf" target={"_blank"} className="d-block w-100 h-100"></a></div>
                     </Col>
                     <Col className="col-6 d-flex justify-content-start">
-                      <div className="discordLink"><a target={"_blank"} className="d-block w-100 h-100" href="#"></a></div>
+                      <div className="discordLink"><a href="https://discord.gg/straydogzwtf" target={"_blank"} className="d-block w-100 h-100"></a></div>
                     </Col>
                   </Row>
                 </Col>
@@ -312,11 +308,13 @@ function App() {
             <Col className="col-12 mb-4">
               <Row className="justify-content-center">
                 <Col className="col-md-8 col-lg-5 m-auto">
-                  <img className="w-100" alt={"logo"} src={"/config/images/StrayDogz_Logo.png"} />
+                  <div className="w-100 logoHomeAnimated">
+                    <div></div>
+                  </div>
                 </Col>
               </Row>
             </Col>
-            <Col className="col-12 mb-3">
+            <Col className="col-12 mb-3 mt-5">
               <Row className="justify-content-center">
                 <Col className="col-md-8 col-lg-5 m-auto">
                   <div className="mint">
@@ -334,18 +332,14 @@ function App() {
                 </Col>
               </Row>
             </Col>
-            <Col className="col-12 mb-3">
-              <Row className="justify-content-center">
-                <Col className="col-md-8">
-                  <img className="d-block m-auto mb-2" src={"/config/images/eth.png"}/>
-                  <p className="descriptionLanding">7777 Genesis StrayDogz NFTs are looking for new home!</p>
-                </Col>
-              </Row>
-            </Col>
           </Row>
+          </Container>
+          <div className="bottomPart">
+            <img className="d-block m-auto mb-2" src={"/config/images/eth.png"}/>
+            <p className="descriptionLanding mb-3">7777 Genesis StrayDogz NFTs are looking for new home!</p>
+            <Gallery/>
+          </div>
         </Container>
-        </s.Container>
-        <Gallery/>
     </s.Screen>
   );
 }
