@@ -334,7 +334,7 @@ function App() {
                 <Col className="col-md-8 col-lg-5 m-auto">
                   <div className="mint">
                     <Countdown
-                      date={'2022-07-23T18:00:00'}
+                      date={'2022-07-23 16:00:00 UTC'}
                       renderer={props =>
                       <div className="countdownCustom">
                         <div className="countdownTitle">Free Mint event starts in:</div>
