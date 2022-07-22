@@ -281,7 +281,8 @@ function App() {
   return (
     <s.Screen
     >
-
+        <video className="videoBg" autoPlay muted loop id="myVideo" src="/config/images/web_drawing_anim.mp4" type="video/mp4">
+          </video>
         <Container fluid className="bg">
           <Container>
           <Row className="justify-content-center">

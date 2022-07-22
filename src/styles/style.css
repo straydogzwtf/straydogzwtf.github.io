@@ -5,18 +5,12 @@ body{
 }
 .bg{
     padding-top: 1rem;
-    background-image: url(./images/head1.png), url(./images/head2.png), url(./images/head3.png),url(./images/head4.png),url(./images/sweb.jpg);
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-left: 0;
     padding-right: 0;
-    transform-origin: center;
-    animation: bgAnimated 4s 5s linear infinite;
+    z-index: 1;
 }
 @keyframes bgAnimated {
     0%{
@@ -46,6 +40,14 @@ body{
     100%{
         background-size:cover, 0, 0, 0, cover;
     }
+}
+.videoBg{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 0;
 }
 .sdNavbar{
     background-color: rgba(16,11,6,.75);
