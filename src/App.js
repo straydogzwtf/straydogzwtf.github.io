@@ -27,18 +27,31 @@ const responsive = {
 const items = [
   <img src="/config/images/StrayDogz_01.png" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_02.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_class_2.jpg" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_03.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_10.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_class_3.jpg" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_04.png" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_05.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_11.png" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_06.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_class_4.jpg" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_07.png" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_08.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_class_1.jpg" onDragStart={handleDragStart} role="presentation" />,
   <img src="/config/images/StrayDogz_09.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_12.png" onDragStart={handleDragStart} role="presentation" />,
+  <img src="/config/images/StrayDogz_class_5.jpg" onDragStart={handleDragStart} role="presentation" />,
 ];
 const Gallery = () => {
   return (
-    <AliceCarousel mouseTracking items={items} responsive={responsive}
-    controlsStrategy="alternate"/>
+    <AliceCarousel
+    mouseTracking
+    items={items}
+    responsive={responsive}
+    controlsStrategy="alternate"
+    autoPlay
+    autoPlayInterval="2000"/>
   );
 }
 
