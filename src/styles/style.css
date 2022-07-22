@@ -3,6 +3,9 @@ body{
     font-family: 'Arvo', monospace;
     letter-spacing: .03rem;
 }
+.contAll{
+    z-index: 1;
+}
 .bg{
     padding-top: 1rem;
     display: flex;
@@ -10,7 +13,9 @@ body{
     justify-content: space-between;
     padding-left: 0;
     padding-right: 0;
-    z-index: 1;
+    background-image: url(./images/sweb.jpg);
+    background-size: cover;
+    background-position: center;
 }
 @keyframes bgAnimated {
     0%{
@@ -48,6 +53,7 @@ body{
     min-width: 100%;
     min-height: 100%;
     z-index: 0;
+    display: none;
 }
 .sdNavbar{
     background-color: rgba(16,11,6,.75);
@@ -344,6 +350,9 @@ body{
     }
     .sdNavbar .nav-item{
         flex-direction: row;
+    }
+    .videoBg{
+        display: block;
     }
 }
 @media(min-width:1200px){

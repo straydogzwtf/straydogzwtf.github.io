@@ -281,9 +281,10 @@ function App() {
   return (
     <s.Screen
     >
+        <Container fluid className="bg">
         <video className="videoBg" autoPlay muted loop id="myVideo" src="/config/images/web_drawing_anim.mp4" type="video/mp4">
           </video>
-        <Container fluid className="bg">
+          <div className="contAll">
           <Container>
           <Row className="justify-content-center">
             <Col className="col-md-8 col-lg-6 m-auto mb-3">
@@ -352,6 +353,7 @@ function App() {
             <img className="d-block m-auto mb-2" src={"/config/images/eth.png"}/>
             <p className="descriptionLanding mb-3">7777 Genesis StrayDogz NFTs are looking for new homes!</p>
             <Gallery/>
+          </div>
           </div>
         </Container>
     </s.Screen>
