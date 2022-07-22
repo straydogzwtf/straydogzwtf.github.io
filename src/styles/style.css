@@ -54,6 +54,7 @@ body{
     min-height: 100%;
     z-index: 0;
     display: none;
+    top: 0;
 }
 .sdNavbar{
     background-color: rgba(16,11,6,.75);
